@@ -3,7 +3,7 @@ FROM node:18-slim
 # Instalar dependências básicas
 RUN apt-get update && \
     apt-get install -y ffmpeg python3-pip curl gnupg && \
-    pip install yt-dlp
+    pip install --break-system-packages yt-dlp
 
 # Adicionar repositório do n8n
 ENV N8N_VERSION=1.45.1
