@@ -5,12 +5,10 @@ RUN apt-get update && \
     apt-get install -y ffmpeg python3-pip curl gnupg && \
     pip install --break-system-packages yt-dlp
 
-# Adicionar repositório do n8n
-ENV N8N_VERSION=1.45.1
+# Instalar versão 2.0.0 do n8n
+ENV N8N_VERSION=2.0.0
 RUN npm install -g n8n@$N8N_VERSION
 
-# Definir porta padrão
+# Expor porta e iniciar n8n
 EXPOSE 5678
-
-# Definir comando de arranque
 CMD ["n8n"]
